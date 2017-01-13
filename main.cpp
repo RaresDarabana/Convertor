@@ -179,3 +179,90 @@ bool verifySecondAnswer(char answer[20])
         }
     return false;
 }
+
+bool thirdQuestion()
+{
+    cout<<"Introduceti o valoare numerica!"<<'\n';
+    bool result=thirdAnswer();
+    if (result==true)
+        {
+            return true;
+        }
+    return false;
+}
+
+bool thirdAnswer()
+{
+    cin>>valueForConversion;
+    bool result=verifyThirdAnswer(valueForConversion);
+    if (result==true)
+        {
+            return true;
+        }
+    return false;
+}
+
+bool verifyThirdAnswer(int value)
+{
+    if (value>0)
+        {
+            return true;
+        }
+    return false;
+}
+
+bool fourthQuestion()
+{
+    cout<<"Care este unitatea in care doriti sa convertiti?"<<'\n';
+    bool result=fourthAnswer();
+    if (result==true)
+        {
+            return true;
+        }
+    return false;
+}
+
+bool fourthAnswer()
+{
+    char answer[20];
+    cin>>answer;
+    bool result;
+    result=verifyFourthAnswer(answer);
+    if (result==true)
+        {
+            return true;
+        }
+    return false;
+}
+
+bool verifyFourthAnswer(char answer[20])
+{
+    int ok=0, answerLength, j, i;
+    answerLength=strlen(answer);
+    for (i=0; i<data[unitCode].elements.numberOfElements; i++)
+        {
+            if (data[unitCode].elements.lengths[i]==answerLength)
+                {
+                    for (j=0, ok=1; j<=answerLength && ok; j++)
+                        {
+                            if (answer[j]!=data[unitCode].elements.legend[i][j])
+                                {
+                                    ok=0;
+                                }
+                        }
+                }
+            if (ok)
+                {
+                    elementToConvert=i;
+                    return true;
+                }
+        }
+    return false;
+}
+
+float printResult()
+{
+    float result;
+    result=valueForConversion*data[unitCode].matrix[elementForConversion][elementToConvert];
+    return result;
+}
