@@ -266,3 +266,171 @@ float printResult()
     result=valueForConversion*data[unitCode].matrix[elementForConversion][elementToConvert];
     return result;
 }
+
+void initializations()
+{
+    int i=0, j, k;
+    for (i=0; i<=9; i++)
+        data[i].code=i;
+
+    i=0;
+    strcpy(data[i].name, "lungime"); i++;
+    strcpy(data[i].name, "arie"); i++;
+    strcpy(data[i].name, "volum"); i++;
+    strcpy(data[i].name, "timp"); i++;
+    strcpy(data[i].name, "viteza"); i++;
+    strcpy(data[i].name, "temperatura"); i++;
+    strcpy(data[i].name, "masa"); i++;
+    strcpy(data[i].name, "energie"); i++;
+    strcpy(data[i].name, "presiune"); i++;
+    strcpy(data[i].name, "densitate"); i++;
+    strcpy(data[i].name, "consum");
+
+    i=0; j=0;
+    strcpy(data[i].elements.legend[j], "centimetri"); data[i].elements.lengths[j]=strlen("centimetri"); j++;
+    strcpy(data[i].elements.legend[j], "picioare"); data[i].elements.lengths[j]=strlen("picioare"); j++;
+    strcpy(data[i].elements.legend[j], "toli"); data[i].elements.lengths[j]=strlen("toli"); j++;
+    strcpy(data[i].elements.legend[j], "kilometri"); data[i].elements.lengths[j]=strlen("kilometri"); j++;
+    strcpy(data[i].elements.legend[j], "mile"); data[i].elements.lengths[j]=strlen("mile"); j++;
+    strcpy(data[i].elements.legend[j], "metri"); data[i].elements.lengths[j]=strlen("metri"); j++;
+    strcpy(data[i].elements.legend[j], "milimetri"); data[i].elements.lengths[j]=strlen("milimetri"); j++;
+    strcpy(data[i].elements.legend[j], "yarzi"); data[i].elements.lengths[j]=strlen("yarzi");
+    data[i].elements.numberOfElements=8;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "ari"); data[i].elements.lengths[j]=strlen("ari"); j++;
+    strcpy(data[i].elements.legend[j], "acri"); data[i].elements.lengths[j]=strlen("acri"); j++;
+    strcpy(data[i].elements.legend[j], "centimetri patrati"); data[i].elements.lengths[j]=strlen("centimetri patrati"); j++;
+    strcpy(data[i].elements.legend[j], "picioare patrate"); data[i].elements.lengths[j]=strlen("picioare patrate"); j++;
+    strcpy(data[i].elements.legend[j], "hectari"); data[i].elements.lengths[j]=strlen("hectari"); j++;
+    strcpy(data[i].elements.legend[j], "toli patrati"); data[i].elements.lengths[j]=strlen("toli patrati"); j++;
+    strcpy(data[i].elements.legend[j], "kilometri patrati"); data[i].elements.lengths[j]=strlen("kilometri patrati"); j++;
+    strcpy(data[i].elements.legend[j], "metri patrati"); data[i].elements.lengths[j]=strlen("metri patrati"); j++;
+    strcpy(data[i].elements.legend[j], "milimetri patrati"); data[i].elements.lengths[j]=strlen("milimetri patrati"); j++;
+    strcpy(data[i].elements.legend[j], "yarzi patrati"); data[i].elements.lengths[j]=strlen("yarzi patrati");
+    data[i].elements.numberOfElements=10;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "centilitri"); data[i].elements.lengths[j]=strlen("centilitri"); j++;
+    strcpy(data[i].elements.legend[j], "centimetri cubi"); data[i].elements.lengths[j]=strlen("centimetri cubi"); j++;
+    strcpy(data[i].elements.legend[j], "decilitri"); data[i].elements.lengths[j]=strlen("decilitri"); j++;
+    strcpy(data[i].elements.legend[j], "decimetri cubi"); data[i].elements.lengths[j]=strlen("decimetri cubi"); j++;
+    strcpy(data[i].elements.legend[j], "picioare cubice"); data[i].elements.lengths[j]=strlen("picioare cubice"); j++;
+    strcpy(data[i].elements.legend[j], "galoni"); data[i].elements.lengths[j]=strlen("galoni"); j++;
+    strcpy(data[i].elements.legend[j], "toli cubi"); data[i].elements.lengths[j]=strlen("yarzi"); j++;
+    strcpy(data[i].elements.legend[j], "litri"); data[i].elements.lengths[j]=strlen("litri"); j++;
+    strcpy(data[i].elements.legend[j], "metri cubi"); data[i].elements.lengths[j]=strlen("metri cubi"); j++;
+    strcpy(data[i].elements.legend[j], "mililitri"); data[i].elements.lengths[j]=strlen("mililitri"); j++;
+    strcpy(data[i].elements.legend[j], "yarzi cubi"); data[i].elements.lengths[j]=strlen("yarzi cubi"); j++;
+    data[i].elements.numberOfElements=11;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "saptamani"); data[i].elements.lengths[j]=strlen("saptamani"); j++;
+    strcpy(data[i].elements.legend[j], "zile"); data[i].elements.lengths[j]=strlen("zile"); j++;
+    strcpy(data[i].elements.legend[j], "ore"); data[i].elements.lengths[j]=strlen("ore"); j++;
+    strcpy(data[i].elements.legend[j], "minute"); data[i].elements.lengths[j]=strlen("minute"); j++;
+    strcpy(data[i].elements.legend[j], "secunde"); data[i].elements.lengths[j]=strlen("secunde"); j++;
+    strcpy(data[i].elements.legend[j], "decisecunde"); data[i].elements.lengths[j]=strlen("decisecunde"); j++;
+    strcpy(data[i].elements.legend[j], "centisecunde"); data[i].elements.lengths[j]=strlen("centisecunde");
+
+    data[i].elements.numberOfElements=7;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "centimetri pe secunda"); data[i].elements.lengths[j]=strlen("centimetri pe secunda"); j++;
+    strcpy(data[i].elements.legend[j], "picioare pe ora"); data[i].elements.lengths[j]=strlen("picioare pe ora"); j++;
+    strcpy(data[i].elements.legend[j], "picioare pe secunda"); data[i].elements.lengths[j]=strlen("picioare pe secunda"); j++;
+    strcpy(data[i].elements.legend[j], "kilometri pe ora"); data[i].elements.lengths[j]=strlen("kilometri pe ora"); j++;
+    strcpy(data[i].elements.legend[j], "kilometri pe secunda"); data[i].elements.lengths[j]=strlen("kilometri pe secunda"); j++;
+    strcpy(data[i].elements.legend[j], "metri pe secunda"); data[i].elements.lengths[j]=strlen("metri pe secunda"); j++;
+    strcpy(data[i].elements.legend[j], "metri pe ora"); data[i].elements.lengths[j]=strlen("metri pe ora"); j++;
+    strcpy(data[i].elements.legend[j], "mile pe ora"); data[i].elements.lengths[j]=strlen("mile pe ora");
+    data[i].elements.numberOfElements=8;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "grade celsius"); data[i].elements.lengths[j]=strlen("grade celsius"); j++;
+    strcpy(data[i].elements.legend[j], "grade fahrenheit"); data[i].elements.lengths[j]=strlen("grade fahrenheit"); j++;
+    strcpy(data[i].elements.legend[j], "grade kelvin"); data[i].elements.lengths[j]=strlen("grade kelvin"); j++;
+    strcpy(data[i].elements.legend[j], "grade rankine"); data[i].elements.lengths[j]=strlen("grade rankine");
+    data[i].elements.numberOfElements=4;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "grame"); data[i].elements.lengths[j]=strlen("grame"); j++;
+    strcpy(data[i].elements.legend[j], "kilograme"); data[i].elements.lengths[j]=strlen("kilograme"); j++;
+    strcpy(data[i].elements.legend[j], "pounds"); data[i].elements.lengths[j]=strlen("pounds"); j++;
+    strcpy(data[i].elements.legend[j], "miligrame"); data[i].elements.lengths[j]=strlen("miligrame"); j++;
+    strcpy(data[i].elements.legend[j], "uncii"); data[i].elements.lengths[j]=strlen("uncii"); j++;
+    strcpy(data[i].elements.legend[j], "tone"); data[i].elements.lengths[j]=strlen("tone");
+    data[i].elements.numberOfElements=6;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "jouli"); data[i].elements.lengths[j]=strlen("jouli"); j++;
+    strcpy(data[i].elements.legend[j], "kilojouli"); data[i].elements.lengths[j]=strlen("kilojouli"); j++;
+    strcpy(data[i].elements.legend[j], "kilowatt pe ora"); data[i].elements.lengths[j]=strlen("kilowatt pe ora");
+    data[i].elements.numberOfElements=3;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "atmosfere"); data[i].elements.lengths[j]=strlen("atmosfere"); j++;
+    strcpy(data[i].elements.legend[j], "bari"); data[i].elements.lengths[j]=strlen("bari"); j++;
+    strcpy(data[i].elements.legend[j], "milimetri coloana de mercur"); data[i].elements.lengths[j]=strlen("milimetri coloana de mercur"); j++;
+    strcpy(data[i].elements.legend[j], "megapascali"); data[i].elements.lengths[j]=strlen("megapascali"); j++;
+    strcpy(data[i].elements.legend[j], "pascali"); data[i].elements.lengths[j]=strlen("pascali"); j++;
+    strcpy(data[i].elements.legend[j], "torri"); data[i].elements.lengths[j]=strlen("torri"); j++;
+    data[i].elements.numberOfElements=6;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "grame pe metru cub"); data[i].elements.lengths[j]=strlen("grame pe metru cub"); j++;
+    strcpy(data[i].elements.legend[j], "kilograme pe metru cub"); data[i].elements.lengths[j]=strlen("kilograme pe metru cub");
+    data[i].elements.numberOfElements=2;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+    i++; j=0;
+    strcpy(data[i].elements.legend[j], "litrii la suta"); data[i].elements.lengths[j]=strlen("litrii la suta"); j++;
+    strcpy(data[i].elements.legend[j], "galoni la suta"); data[i].elements.lengths[j]=strlen("galoni la suta");
+    data[i].elements.numberOfElements=2;
+
+    for (j=0; j<data[i].elements.numberOfElements; j++)
+        for (k=0; k<data[i].elements.numberOfElements; k++)
+            fin>>data[i].matrix[j][k];
+
+
+}
